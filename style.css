@@ -1,0 +1,193 @@
+* {
+    margin: 0;
+    padding: 0;
+    
+    font-family: 'Poppins';
+}
+
+body {
+    background: linear-gradient(180deg, #555, #222);
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+    height: 100dvh;
+}
+
+.container {
+    background: #333;
+    padding: 15px 15px;
+    
+    border-radius: 0.3rem;
+    
+    box-shadow: 10px 10px 0px #000, -10px -10px 0px #000;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+    gap: 30px;
+    
+    animation: shadowTroca 5s ease-in-out infinite;
+    
+    h1 {
+        margin-bottom: 30px;
+        
+        color: #0D0D0D;
+        
+        text-decoration: underline;
+    }
+    
+    h2 {
+        color: #054794;
+        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        span {
+            padding: 0px 20px;
+            color: #00FF33;
+        }
+    }
+    
+    p {
+        font-size: 25px;
+        
+        color: #555;
+    }
+    
+    input {
+        outline: none;
+        
+        background: transparent;
+        border: none;
+        border-bottom: 2px solid #000;
+        
+        text-align: center;
+        transition: .3s ease-in-out;
+        
+        padding: 2px 5px;
+    }
+    
+    input:focus {
+        animation: inputAn 6s ease forwards;
+    }
+    
+    button {
+        padding: 6px 20px;
+        color: white;
+        
+        border: 2px solid #FFFFFF;
+        border-radius: 2rem;
+        background: #555;
+        
+        transition: .3s ease-out;
+    }
+    
+    button:hover {
+        transform: scale(1.05);
+    }
+    
+    button:active {
+        background: #444;
+    }
+    
+    #identify {
+        color: lime;
+        
+        font-weight: bold;
+    }
+}
+
+@keyframes inputAn {
+    0% {
+        border: none;
+    }
+    
+    25% {
+        border-bottom: 2px solid #000;
+    }
+
+    50% {
+        border-bottom: 2px solid #000;
+        border-right: 2px solid #000;
+        border-left: 2px solid #000;
+    }
+    
+    75% {
+        border-bottom: 2px solid #222;
+        border-right: 2px solid #222;
+        border-left: 2px solid #222;
+        
+    }
+    
+    100% {
+        border: 2px solid #000;
+    }
+}
+
+@keyframes shadowTroca {
+    0% {
+        box-shadow: 10px 10px 0px #000, -10px -10px 0px #000;
+    }
+    
+    25% {
+        box-shadow: 10px -10px 0px #000, -10px 10px 0px #000;
+    }
+    
+    50% {
+        box-shadow: -10px -10px 0px #000, 10px 10px 0px #000;
+    }
+    
+    75% {
+        box-shadow: -10px 10px 0px #000, 10px -10px 0px #000;
+    }
+    
+    100% {
+        box-shadow: 10px 10px 0px #000, -10px -10px 0px #000;
+    }
+}
+
+.animationFigures {
+    position: relative;
+    right: -310px;
+    
+    margin-bottom: 100px;
+    
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: center;
+    
+    width: 300px;
+    
+    animation: elements 5s linear infinite;
+    
+    p {
+        font-size: 40px;
+    }
+}
+
+@keyframes elements {
+    0% {
+        right: -310px;
+    }
+    
+    50% {
+        right: 0px;
+    }
+    
+    100% {
+        right: 310px;
+    }
+}
+
+@media (min-width: 400px) {
+    .animationFigures {
+        display: none;
+    }
+}
